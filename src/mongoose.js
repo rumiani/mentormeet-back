@@ -9,11 +9,11 @@ const User = mongoose.model('User', {
 })
 const user = new User({
     task: 'this is new task',
-    status:false
+    status:5
 })
 user.save().then((user)=>{
     console.log(user);
 }
 ).catch((err) => {
-    console.log(err);
+    console.log(err._message);
 })
