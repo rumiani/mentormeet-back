@@ -12,7 +12,7 @@ app.post('/', (req: Request, res: Response)=>{
     const user = new User(req.body)
     user.save().then( () =>{
       res.send(user)
-    }).catch((err) =>{
+    }).catch((err: any) =>{
       console.log(err);
     })
 });
