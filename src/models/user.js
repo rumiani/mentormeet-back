@@ -6,7 +6,14 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true,
         trim:true,
-        lowercase: true
+        lowercase: true,
+        unique:true,
+    },
+    name: {
+        type:String,
+        required: true,
+        trim:true,
+        lowercase: true,
     },
     email: {
         type:String,
@@ -23,7 +30,6 @@ const userSchema = new mongoose.Schema({
     },
     loggedIn: {
         type:Boolean,
-        required: true,
     },
     role: {
         type:String,
@@ -31,8 +37,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         default:'member',
         lowercase: true
-    }
-})
+    }},
+    { timestamps: true }
+)
 
 const User = mongoose.model('User', userSchema)
 
